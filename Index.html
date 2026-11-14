@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phạm Bảo Linh - Giới thiệu bản thân</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS nội bộ (thẻ style) - Tin học 12: định dạng trang web bằng CSS -->
+  <style>
+    :root {
+      --nen: #eaf4fd;        /* xanh dương rất nhạt - màu nền trang */
+      --khung: #ffffff;      /* màu khung nội dung */
+      --xanh-nhat: #cfe6fa;  /* xanh dương nhạt */
+      --xanh-vua: #7db9ea;   /* xanh dương vừa - màu nhấn */
+      --xanh-dam: #1f5e96;   /* xanh dương đậm - tiêu đề */
+      --chu: #16324a;        /* màu chữ chính */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--chu);
+      background: var(--nen);
+    }
+
+    /* ----- Thanh menu: dùng siêu liên kết neo (#id) ----- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--khung);
+      border-bottom: 3px solid var(--xanh-nhat);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--xanh-dam);
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    nav a:hover, nav a:focus-visible {
+      background: var(--xanh-nhat);
+      outline: none;
+    }
+
+    /* ----- Phần đầu trang ----- */
+    header {
+      text-align: center;
+      padding: 64px 20px 48px;
+      background: linear-gradient(180deg, var(--xanh-nhat), var(--nen));
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 800;
+      color: var(--xanh-dam);
+      line-height: 1.15;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ----- Các phần nội dung ----- */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 10px 20px 40px;
+    }
+    section {
+      background: var(--khung);
+      border-left: 8px solid var(--xanh-vua);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 28px;
+      scroll-margin-top: 70px;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.5rem;
+      color: var(--xanh-dam);
+    }
+
+    /* ----- Bảng thông tin cá nhân ----- */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--xanh-nhat);
+    }
+    th {
+      width: 36%;
+      background: var(--nen);
+      color: var(--xanh-dam);
+    }
+
+    ul, ol { padding-left: 24px; margin: 0; }
+    li { margin-bottom: 6px; }
+
+    /* ----- Video và ảnh ----- */
+    .khung-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--xanh-nhat);
+    }
+    .khung-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    figure { margin: 14px 0 0; }
+    figure img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 4px solid var(--xanh-nhat);
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* ----- Liên hệ ----- */
+    a { color: var(--xanh-dam); }
+    #lien-he ul { padding-left: 0; }
+    #lien-he li { list-style: none; }
+
+    footer {
+      text-align: center;
+      padding: 22px 20px;
+      background: var(--xanh-nhat);
+      color: var(--xanh-dam);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 18px 16px; }
+      th { width: 42%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Menu điều hướng -->
+  <nav>
+    <a href="#thong-tin">Thông tin cá nhân</a>
+    <a href="#so-thich">Sở thích</a>
+    <a href="#thanh-tich">Thành tích</a>
+    <a href="#mo-uoc">Trường mơ ước</a>
+    <a href="#lien-he">Liên hệ</a>
+  </nav>
+
+  <header>
+    <h1>Phạm Bảo Linh</h1>
+    <p>Học sinh lớp 12A4, Trường THPT Hòn Gai</p>
+  </header>
+
+  <main>
+
+    <!-- 1. Thông tin cá nhân (dùng thẻ table) -->
+    <section id="thong-tin">
+      <h2>1. Thông tin cá nhân</h2>
+      <table>
+        <tr>
+          <th>Họ và tên</th>
+          <td>Phạm Bảo Linh</td>
+        </tr>
+        <tr>
+          <th>Lớp</th>
+          <td>12A4, Trường THPT Hòn Gai</td>
+        </tr>
+        <tr>
+          <th>Ngày sinh</th>
+          <td>08/12/2009</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 2. Sở thích (danh sách ul và nhúng video bằng iframe) -->
+    <section id="so-thich">
+      <h2>2. Sở thích</h2>
+      <ul>
+        <li>Xem phim và sưu tầm album OST phim Hàn Quốc</li>
+        <li>Tụ tập cùng bạn bè</li>
+        <li>Đi du lịch</li>
+        <li>Đi ngủ</li>
+        <li>Bài hát yêu thích (video bên dưới)</li>
+      </ul>
+
+      <div class="khung-video">
+        <iframe
+          src="https://www.youtube.com/embed/ia2Ph61bYzc"
+          title="Bài hát yêu thích của Bảo Linh"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p><a href="https://youtu.be/ia2Ph61bYzc?si=9y-Nmjo1vx0iYGXe" target="_blank" rel="noopener">Mở video trên YouTube</a></p>
+    </section>
+
+    <!-- 3. Thành tích (chèn ảnh bằng thẻ img) -->
+    <section id="thanh-tich">
+      <h2>3. Thành tích</h2>
+      <ul>
+        <li>Giải Nhất môn Sinh học cấp trường</li>
+      </ul>
+      <figure>
+        <a href="https://ibb.co/mFDs1qKR" target="_blank" rel="noopener">
+          <img src="https://i.ibb.co/HpFv1zyK/Locket-1794673587664-71-2.jpg" alt="Ảnh Phạm Bảo Linh đạt giải Nhất môn Sinh học cấp trường">
+        </a>
+        <figcaption>Giải Nhất môn Sinh học cấp trường</figcaption>
+      </figure>
+    </section>
+
+    <!-- 4. Trường đại học mơ ước (danh sách có thứ tự ol) -->
+    <section id="mo-uoc">
+      <h2>4. Trường đại học mơ ước</h2>
+      <ol>
+        <li>Đại học Y Hà Nội</li>
+        <li>Đại học Y Dược, Đại học Quốc gia Hà Nội</li>
+        <li>Đại học Y Thái Bình</li>
+        <li>Đại học Y Hải Phòng</li>
+      </ol>
+    </section>
+
+    <!-- 5. Thông tin liên hệ (siêu liên kết a) -->
+    <section id="lien-he">
+      <h2>5. Thông tin liên hệ</h2>
+      <ul>
+        <li>Facebook: <a href="https://www.facebook.com/share/1CKFtLBbGu/" target="_blank" rel="noopener">Trang Facebook của Bảo Linh</a></li>
+        <li>Số liên hệ: <a href="tel:03543748">03543748</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Phạm Bảo Linh - Lớp 12A4, Trường THPT Hòn Gai
+  </footer>
+
+</body>
+</html>
